@@ -1,0 +1,758 @@
+[
+  {
+    "address": "0xca143ce32fe78f1f7019d7d551a6402fc5350c73",
+    "label": "PancakeSwap: Factory v2"
+  },
+  {
+    "address": "0x6c151a4134006395d41319d713349660259dab4e",
+    "label": "Diamond"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000001",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x405fbc9004d857903bfd6b3357792d71a50726b0",
+    "label": "XPL"
+  },
+  {
+    "address": "0x9558a9254890b2a8b057a789f413631b9084f4a3",
+    "label": "AIN"
+  },
+  {
+    "address": "0x247f51881d1e3ae0f759afb801413a6c948ef442",
+    "label": "0x247f_PancakeV3Pool"
+  },
+  {
+    "address": "0xcf7a2efb24ddd3e0cfd19a1a4e0233dfbd7c354b",
+    "label": "0xcf7a_AccessControlledOCR2Aggregator"
+  },
+  {
+    "address": "0x219cffefb1afa9f34695c7facd9b98d1b3291c8b",
+    "label": "0x219c_ChainlinkOracle"
+  },
+  {
+    "address": "0x443fa7bbf35c09ee0ebb5e15f1ea3f0704b89d04",
+    "label": "0x443f_PancakeV3Pool"
+  },
+  {
+    "address": "0x4f31fa980a675570939b737ebdde0471a4be40eb",
+    "label": "0x4f31_PancakeV3Pool"
+  },
+  {
+    "address": "0xee845a7a40a090da256420a293803c35b7f436b6",
+    "label": "PriceCapAdapterStable"
+  },
+  {
+    "address": "0x24618d12b5ea15bb6fe3c81bbb9e011b5d5b107c",
+    "label": "0x2461_PancakeV3Pool"
+  },
+  {
+    "address": "0xa5dbeaf16fc031eae92175974f8d0a439be4ad17",
+    "label": "0xa5db_PancakeV3Pool"
+  },
+  {
+    "address": "0x5d3a12c42e5372b2cc3264ab3cdcf660a1555238",
+    "label": "ARIA"
+  },
+  {
+    "address": "0x47a90a2d92a8367a91efa1906bfc8c1e05bf10c4",
+    "label": "0x47a9_UniswapV3Pool"
+  },
+  {
+    "address": "0x2c3c320d49019d4f9a92352e947c7e5acfe47d68",
+    "label": "0x2c3c_UniswapV3Pool"
+  },
+  {
+    "address": "0x27820f8b2e7c5dbe1eef6805577c222afde1a191",
+    "label": "0x2782_PancakeV3Pool"
+  },
+  {
+    "address": "0xd5df4d260d7a0145f655bcbf3b398076f21016c7",
+    "label": "AOP"
+  },
+  {
+    "address": "0xb9eb5abe26f74395e7833761e76a8e82ad8436f1",
+    "label": "PoolInstance"
+  },
+  {
+    "address": "0x452fecfa5dd59243eec214577345d21f7d8ac5bf",
+    "label": "0x452f_ChainlinkOracle"
+  },
+  {
+    "address": "0xe6e51ea572502dbdf8b40834d0619f9a9144d3a5",
+    "label": "0xe6e5_PancakeV3Pool"
+  },
+  {
+    "address": "0xac0fe1c4126e4a9b644adfc1303827e3bb5dddf3",
+    "label": "0xac0f_PancakeV3Pool"
+  },
+  {
+    "address": "0xae02717e94c9b5bae817601a49b4584f58324015",
+    "label": "0xae02_PancakeV3Pool"
+  },
+  {
+    "address": "0x9c4ee895e4f6ce07ada631c508d1306db7502cce",
+    "label": "0x9c4e_PancakeV3Pool"
+  },
+  {
+    "address": "0x81c7294b66955824bc04acb642ae8dc58e6ce507",
+    "label": "0x81c7_UniswapV3Pool"
+  },
+  {
+    "address": "0xf841cb62c19fcd4ff5cd0aab5939f3140baac3ea",
+    "label": "vSolvBTC"
+  },
+  {
+    "address": "0xfd5840cd36d94d7229439859c0112a4185bc0255",
+    "label": "vUSDT"
+  },
+  {
+    "address": "0x00312400303d02c323295f6e8b7309bc30fb6bce",
+    "label": "ERA"
+  },
+  {
+    "address": "0x0e76414d433ddfe8004d2a7505d218874875a996",
+    "label": "variableDebtBnbWBNB"
+  },
+  {
+    "address": "0x1aecab957bad4c6e36dd29c3d3bb470c4c29768a",
+    "label": "BSU"
+  },
+  {
+    "address": "0x477c2c0459004e3354ba427fa285d7c053203c0e",
+    "label": "LIGHT"
+  },
+  {
+    "address": "0x7324c7c0d95cebc73eea7e85cbaac0dbdf88a05b",
+    "label": "XCN"
+  },
+  {
+    "address": "0xa3cfb853339b77f385b994799b015cb04b208fe6",
+    "label": "POP"
+  },
+  {
+    "address": "0x2877620d8df7456bfd74e4a72b635a924c1c2d1e",
+    "label": "Fuel"
+  },
+  {
+    "address": "0x3ecb529752dec6c6ab08fd83e425497874e21d49",
+    "label": "PINGPONG"
+  },
+  {
+    "address": "0x6bf62ca91e397b5a7d1d6bce97d9092065d7a510",
+    "label": "CROSS"
+  },
+  {
+    "address": "0xe32f9e8f7f7222fcd83ee0fc68baf12118448eaf",
+    "label": "XCX"
+  },
+  {
+    "address": "0x11a09335301cbbfd358e7f38a3466da20a5042b3",
+    "label": "UpgradeableBeacon"
+  },
+  {
+    "address": "0x8f73b65b4caaf64fba2af91cc5d4a2a1318e5d8c",
+    "label": "ERC1967Proxy"
+  },
+  {
+    "address": "0xca3f029a70d5d90000e614afd29e5c833f33cea5",
+    "label": "0xca3f_PancakeV3Pool"
+  },
+  {
+    "address": "0x55d0119a43a0e2c54fd6eb1f17e3b883eedba602",
+    "label": "0x55d0_PancakeV3Pool"
+  },
+  {
+    "address": "0x97620e003c03381eacbde7135f28d94303bb5672",
+    "label": "0x9762_PancakeV3Pool"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000004",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x4fa7c69a7b69f8bc48233024d546bc299d6b03bf",
+    "label": "quq"
+  },
+  {
+    "address": "0xac23b90a79504865d52b49b327328411a23d4db2",
+    "label": "FF"
+  },
+  {
+    "address": "0xbe4176749a74320641e24102b2af2ca37faf2df1",
+    "label": "BoundValidator"
+  },
+  {
+    "address": "0xe9388678f0542d5406145c3db85b5b754daff085",
+    "label": "0xe938_PancakeV3Pool"
+  },
+  {
+    "address": "0xf8bb2be50647447fb355e3a77b81be4db64107cd",
+    "label": "variableDebtBnbUSDT"
+  },
+  {
+    "address": "0xd715cc968c288740028be20685263f43ed1e4837",
+    "label": "GAIA"
+  },
+  {
+    "address": "0xdac991621fd8048d9f235324780abd6c3ad26421",
+    "label": "ZRC"
+  },
+  {
+    "address": "0x1b2103441a0a108dad8848d8f5d790e4d402921f",
+    "label": "0x1b21_OptimizedTransparentUpgradeableProxy"
+  },
+  {
+    "address": "0xa6e8fee84f9bd528ad71917c9ddbb1fd3214f280",
+    "label": "0xa6e8_AccessControlledOCR2Aggregator"
+  },
+  {
+    "address": "0xa51738d1937ffc553d5070f43300b385aa2d9f55",
+    "label": "0xa517_TransparentUpgradeableProxy"
+  },
+  {
+    "address": "0x034fd14b9ae6bb066a1f9f85a55e990b0b25c168",
+    "label": "SupplyLogic"
+  },
+  {
+    "address": "0x4c1332a70a49fdbb6fcba847a5eed5b44c927b2c",
+    "label": "BnbPriceFeedBtcWithoutRoundsV1"
+  },
+  {
+    "address": "0xa9251ca9de909cb71783723713b21e4233fbf1b1",
+    "label": "aBnbUSDT"
+  },
+  {
+    "address": "0x5ffd0eadc186af9512542d0d5e5eafc65d5afc5b",
+    "label": "HEMI"
+  },
+  {
+    "address": "0xcf6bb5389c92bdda8a3747ddb454cb7a64626c63",
+    "label": "XVS"
+  },
+  {
+    "address": "0x8455efa4d7ff63b8bfd96add889483ea7d39b70a",
+    "label": "0x8455_OptimizedTransparentUpgradeableProxy"
+  },
+  {
+    "address": "0x64f63bb92702449f67b15c3dc4f65c83d0bdf0b7",
+    "label": "0x64f6_PancakeV3Pool"
+  },
+  {
+    "address": "0xd7af60112d7dfe0f914724e3407dd54424aaa19b",
+    "label": "0xd7af_PancakeV3Pool"
+  },
+  {
+    "address": "0xf4262c4dbf524f53851a5176bdc7d6c1e0fa82d8",
+    "label": "0xf426_PancakeV3Pool"
+  },
+  {
+    "address": "0x657187786583659b86c5f9d261fd1d65f56b28d7",
+    "label": "0x6571_PancakeV3Pool"
+  },
+  {
+    "address": "0x9b00a09492a626678e5a3009982191586c444df9",
+    "label": "aBnbWBNB"
+  },
+  {
+    "address": "0xee634a826465a1799afc2cfefbdb6fa3766c8888",
+    "label": "AEA"
+  },
+  {
+    "address": "0xaf658df443a937c88c955c737532e9a601ccef8c",
+    "label": "VBep20Delegate"
+  },
+  {
+    "address": "0x30305b22fc2830b42908993e668b31b7234a9737",
+    "label": "0x3030_PancakeV3Pool"
+  },
+  {
+    "address": "0xf8b5df35f6ef1f9ab70d1d76b32d254983af55e3",
+    "label": "0xf8b5_PancakeV3Pool"
+  },
+  {
+    "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "label": "BNB"
+  },
+  {
+    "address": "0xb3b02e4a9fb2bd28cc2ff97b0ab3f6b3ec1ee9d2",
+    "label": "USDf"
+  },
+  {
+    "address": "0xc61eb549acf4a05ed6e3fe0966f5e213b23541ce",
+    "label": "NUMI"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000000",
+    "label": "Null Address"
+  },
+  {
+    "address": "0x6e9bd95830bb775fb9f24b9559f8894d92143ca1",
+    "label": "MarketFacet"
+  },
+  {
+    "address": "0xbee2c57e3a11220e2b948e26965daaa9dfd87a4a",
+    "label": "0xbee2_PancakeV3Pool"
+  },
+  {
+    "address": "0x39d2d7bebd1487ffea308fab8a6fe2d737600e1a",
+    "label": "0x39d2_PancakeV3Pool"
+  },
+  {
+    "address": "0x5134c9d11c397efdf36f828eef23b14f3f399da4",
+    "label": "VAIController"
+  },
+  {
+    "address": "0xd9bba97fd4a12407ead371e71c07d4f0dbdc6a4d",
+    "label": "0xd9bb_PancakeV3Pool"
+  },
+  {
+    "address": "0x808a3f77c4be4e1ae5dab0f63cca2cbfde281dc5",
+    "label": "0x808a_PancakeV3Pool"
+  },
+  {
+    "address": "0xe1acb466421ed24dd8bd381d1205bad0ad43ca9c",
+    "label": "0xe1ac_UniswapV3Pool"
+  },
+  {
+    "address": "0x1a7c9091973cabc491e361a9eaefd047b48a3647",
+    "label": "TwoKinksInterestRateModel"
+  },
+  {
+    "address": "0x726c1475be68374099be2ab8223fa11d715e732f",
+    "label": "RWB"
+  },
+  {
+    "address": "0x2170ed0880ac9a755fd29b2688956bd959f933f8",
+    "label": "ETH"
+  },
+  {
+    "address": "0x4b948d64de1f71fcd12fb586f4c776421a35b3ee",
+    "label": "0G"
+  },
+  {
+    "address": "0xa227cc36938f0c9e09ce0e64dfab226cad739447",
+    "label": "OPEN"
+  },
+  {
+    "address": "0x36696169c63e42cd08ce11f5deebbcebae652050",
+    "label": "0x3669_PancakeV3Pool"
+  },
+  {
+    "address": "0xb6f6d86a8f9879a9c87f643768d9efc38c1da6e7",
+    "label": "TokenBridge"
+  },
+  {
+    "address": "0xff75b6da14ffbbfd355daf7a2731456b3562ba6d",
+    "label": "PoolAddressesProvider"
+  },
+  {
+    "address": "0xba5fe23f8a3a24bed3236f05f2fcf35fd0bf0b5c",
+    "label": "0xba5f_USDC"
+  },
+  {
+    "address": "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+    "label": "0x8ac7_USDC"
+  },
+  {
+    "address": "0x5bb4d589467c25a5ac8db930372dc5da30c3410e",
+    "label": "LUSD"
+  },
+  {
+    "address": "0x86ab1c62a8bf868e1b3e1ab87d587aba6fbcbdc5",
+    "label": "DefaultReserveInterestRateStrategyV2"
+  },
+  {
+    "address": "0xaa16085314e99e2936165983af818e3c1914c909",
+    "label": "0xaa16_PancakeV3Pool"
+  },
+  {
+    "address": "0xbe141893e4c6ad9272e8c04bab7e6a10604501a5",
+    "label": "0xbe14_PancakeV3Pool"
+  },
+  {
+    "address": "0x219cf5fc877f3dc7e5105496249797ed34cdfb4b",
+    "label": "0x219c_PancakeV3Pool"
+  },
+  {
+    "address": "0x9f8f4615ff5143aee365fa34f34196fb85be7650",
+    "label": "0x9f8f_PancakeV3Pool"
+  },
+  {
+    "address": "0x50203df8efcddba9755c886f086b9b2d537a15f9",
+    "label": "0x5020_PancakeV3Pool"
+  },
+  {
+    "address": "0x7f8c5e730121657e17e452c5a1ba3fa1ef96f22a",
+    "label": "WETH"
+  },
+  {
+    "address": "0x8fce7206e3043dd360f115afa956ee31b90b787c",
+    "label": "STAR"
+  },
+  {
+    "address": "0xf86089b30f30285d492b0527c37b9c2225bfcf8c",
+    "label": "PLAY"
+  },
+  {
+    "address": "0xd758c807cf0bd82b737c2fc14935fefe49c44141",
+    "label": "RewardsController"
+  },
+  {
+    "address": "0x6a2608dabe09bc1128eec7275b92dfb939d5db3f",
+    "label": "0x6a26_TOSHI"
+  },
+  {
+    "address": "0x81a7da4074b8e0ed51bea40f9dcbdf4d9d4832b4",
+    "label": "AIO"
+  },
+  {
+    "address": "0x004065d34c6b18ce4370ced1cebde94865dbfafe",
+    "label": "Venus: VAI Unitroller"
+  },
+  {
+    "address": "0xc206c2764a9dbf27d599613b8f9a63acd1160ab4",
+    "label": "InitializableImmutableAdminUpgradeabilityProxy"
+  },
+  {
+    "address": "0x9124b9b7517387937e07078db5a2620860400330",
+    "label": "Avalon"
+  },
+  {
+    "address": "0x7192966c6d3ab630ee60dbd4c1b39e9e8267f8cf",
+    "label": "0x7192_PancakeV3Pool"
+  },
+  {
+    "address": "0x9485ff32b6b4444c21d5abe4d9a2283d127075a2",
+    "label": "0x9485_PancakeV3Pool"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000002",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x7427bd9542e64d1ac207a540cfce194b7390a07f",
+    "label": "XAN"
+  },
+  {
+    "address": "0x0ed943ce24baebf257488771759f9bf482c39706",
+    "label": "Pancakeswap V2: Fee To Address"
+  },
+  {
+    "address": "0x5ecf6303bf228ee55ef50cba4f173b467d87c300",
+    "label": "0x5ecf_AccessControlledOCR2Aggregator"
+  },
+  {
+    "address": "0xf97ce1f1c287a731dd7fc23fd141c151dd0d8568",
+    "label": "Moolah"
+  },
+  {
+    "address": "0x621199f6beb2ba6fbd962e8a52a320ea4f6d4aa3",
+    "label": "BridgeImplementation"
+  },
+  {
+    "address": "0x1e8d7ab96323953fac85ab687f5d38b45344e62d",
+    "label": "0x1e8d_PancakeV3Pool"
+  },
+  {
+    "address": "0xb67e5eaf770a384ab28029d08b9bc5ebe32beb0f",
+    "label": "0xb67e_PancakeV3Pool"
+  },
+  {
+    "address": "0x4c66bcda57a812237729637f53ff91cf3aa4677d",
+    "label": "BnbMultiFeedAdapterWithoutRoundsV4"
+  },
+  {
+    "address": "0x55d398326f99059ff775485246999027b3197955",
+    "label": "USDT"
+  },
+  {
+    "address": "0x1d58e204ca59328007469a614522903d69dc0a4c",
+    "label": "VRA"
+  },
+  {
+    "address": "0xc9e5921e9c99ce3543287e123bed1421b57c42dc",
+    "label": "MetaERC20Spoke"
+  },
+  {
+    "address": "0xbbcd063efe506c3d42a0fa2db5c08430288c71fc",
+    "label": "0xbbcd_TransparentUpgradeableProxy"
+  },
+  {
+    "address": "0x44a94a5e96bc6e36f4775e6229e2487860d4b7f0",
+    "label": "CheckpointView"
+  },
+  {
+    "address": "0xcf59b8c8baa2dea520e3d549f97d4e49ade17057",
+    "label": "0xcf59_PancakeV3Pool"
+  },
+  {
+    "address": "0xb4db9fcda97fd7b02eaf1e8317e6ddb04bacc1af",
+    "label": "0xb4db_PancakeV3Pool"
+  },
+  {
+    "address": "0x6592b5de802159f3e74b2486b091d11a8256ab8a",
+    "label": "0x6592_OptimizedTransparentUpgradeableProxy"
+  },
+  {
+    "address": "0x6807dc923806fe8fd134338eabca509979a7e0cb",
+    "label": "Aave V3: Pool Proxy"
+  },
+  {
+    "address": "0xd701c1fdae34f9cf242a4de19a2e7288f924ea1c",
+    "label": "ComptrollerLens"
+  },
+  {
+    "address": "0x68cb22f8664546e19b7bfcc4f86fd0fcbdd0b02e",
+    "label": "JumpRateModel"
+  },
+  {
+    "address": "0xa424c24c5cbfc377c3b6ae7355c3f30984664b16",
+    "label": "0xa424_PancakeV3Pool"
+  },
+  {
+    "address": "0x8e6601b49a2c73fe64d01c057b796ca05f2a7348",
+    "label": "0x8e66_PancakeV3Pool"
+  },
+  {
+    "address": "0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f",
+    "label": "0x8baf_PancakeV3Pool"
+  },
+  {
+    "address": "0x19ed254efa5e061d28d84650891a3db2a9940c16",
+    "label": "$SUP"
+  },
+  {
+    "address": "0x1e3dbc0aad9671fdd31e58b2fcc6cf1ca9947994",
+    "label": "WAI"
+  },
+  {
+    "address": "0xc32cc70741c3a8433dcbcb5ade071c299b55ffc8",
+    "label": "C"
+  },
+  {
+    "address": "0x8c321c2e323bc26c01df0dc62311482a1256fdf5",
+    "label": "ZENT"
+  },
+  {
+    "address": "0xc07e1300dc138601fa6b0b59f8d0fa477e690589",
+    "label": "Q"
+  },
+  {
+    "address": "0x92b7807bf19b7dddf89b706143896d05228f3121",
+    "label": "0x92b7_PancakeV3Pool"
+  },
+  {
+    "address": "0x172fcd41e0913e95784454622d1c3724f546f849",
+    "label": "0x172f_PancakeV3Pool"
+  },
+  {
+    "address": "0x264990fbd0a4796a3e3d8e37c4d5f87a3aca5ebf",
+    "label": "Chainlink: BTC/USD Price Feed"
+  },
+  {
+    "address": "0x8c4c97d6a279c6a3eb63348c760ff0153aa779ee",
+    "label": "0x8c4c_PancakeV3Pool"
+  },
+  {
+    "address": "0x813c0decbb1097fff46d0ed6a39fb5f6a83043f4",
+    "label": "0x813c_UniswapV3Pool"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000003",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x4aae823a6a0b376de6a78e74ecc5b079d38cbcf7",
+    "label": "SolvBTC"
+  },
+  {
+    "address": "0x9840652dc04fb9db2c43853633f0f62be6f00f98",
+    "label": "CGPT"
+  },
+  {
+    "address": "0x39bc1bfda2130d6bb6dbefd366939b4c7aa7c697",
+    "label": "AaveOracle"
+  },
+  {
+    "address": "0x529ae2e71e0836be7378a8d47657e805829c6b3c",
+    "label": "PolicyFacet"
+  },
+  {
+    "address": "0x6510b17df2909fead6492905c72a66676547da7c",
+    "label": "0x6510_PancakeV3Pool"
+  },
+  {
+    "address": "0xfa09940612d7ae39f7f220f3ca6816bd72844577",
+    "label": "0xfa09_PancakeV3Pool"
+  },
+  {
+    "address": "0x1f34c87ded863fe3a3cd76fac8ada9608137c8c3",
+    "label": "OVL"
+  },
+  {
+    "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+    "label": "WBNB"
+  },
+  {
+    "address": "0x9beee89723ceec27d7c2834bec6834208ffdc202",
+    "label": "AVL"
+  },
+  {
+    "address": "0x8b4329947e34b6d56d71a3385cac122bade7d78d",
+    "label": "TokenV2"
+  },
+  {
+    "address": "0xc484ecd341f8e02d6685da4f6670684a7675303b",
+    "label": "Unidentified Exploiter"
+  },
+  {
+    "address": "0x211b1c2c778daeed39ce0e6a91edb1d82a20bb2b",
+    "label": "Prime"
+  },
+  {
+    "address": "0x3be400e891786c958c22e121abe71599c576effc",
+    "label": "0x3be4_PancakeV3Pool"
+  },
+  {
+    "address": "0x2e46b98d95c9030e55bc57b446e77ff38930702c",
+    "label": "0x2e46_TOSHI"
+  },
+  {
+    "address": "0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c",
+    "label": "BTCB"
+  },
+  {
+    "address": "0xba7e4ae2f9f1bd0530a726bf1efa0f0ac7547630",
+    "label": "VARIABLE_DEBT_TOKEN_IMPL"
+  },
+  {
+    "address": "0x46cf1cf8c69595804ba91dfdd8d6b960c9b0a7c4",
+    "label": "0x46cf_PancakeV3Pool"
+  },
+  {
+    "address": "0xa4b6cf2baaa235ab7fe10eadb84b82460165b38f",
+    "label": "SolvBTCV3"
+  },
+  {
+    "address": "0x90d840f463c4e341e37b1d51b1ab16bc5b34865c",
+    "label": "ResilientOracle"
+  },
+  {
+    "address": "0x419f8539c423d66dc42bd80d6f0bdd6fd4c21dce",
+    "label": "0x419f_PancakeV3Pool"
+  },
+  {
+    "address": "0x05b5fc30d3ecdd6ca19a733a82b44ff681175211",
+    "label": "ATOKEN_IMPL"
+  },
+  {
+    "address": "0xc4a1cc5ca8955a4650bdc109bddf110e33a1e344",
+    "label": "RZUSD"
+  },
+  {
+    "address": "0x97c19d3ae8e4d74e25ef3aff3a277fb614ed76d4",
+    "label": "0x97c1_TransparentUpgradeableProxy"
+  },
+  {
+    "address": "0x927ae3c2cd88717a1525a55021af9612c3f04583",
+    "label": "0x927a_PancakeV3Pool"
+  },
+  {
+    "address": "0x480f51beded3fc0c42f4a86f923700ea7859fbba",
+    "label": "Cake-LP"
+  },
+  {
+    "address": "0xfd36e2c2a6789db23113685031d7f16329158384",
+    "label": "Venus: Distribution"
+  },
+  {
+    "address": "0x57f4dff6f9404c1c89d5d0457e26c87ffbd9e22d",
+    "label": "StandDUSD"
+  },
+  {
+    "address": "0xe5ce5bc4785cd2a246151364f5a190cee3fdb142",
+    "label": "0xe5ce_PancakeV3Pool"
+  },
+  {
+    "address": "0x049f1009bc8c5d0048732fe2f95c27c240214634",
+    "label": "0x049f_PancakeV3Pool"
+  },
+  {
+    "address": "0x3398385c205c060ef54744ee817c1487e28a6616",
+    "label": "0x3398_USD1"
+  },
+  {
+    "address": "0x95034f653d5d161890836ad2b6b8cc49d14e029a",
+    "label": "AB"
+  },
+  {
+    "address": "0xfa35e2250e376c23955247383dc32c79082e7fcc",
+    "label": "FST"
+  },
+  {
+    "address": "0x000000000000000000000000000000000000dead",
+    "label": "Null: 0x000...dEaD"
+  },
+  {
+    "address": "0xb97ad0e74fa7d920791e90258a6e2085088b4320",
+    "label": "Chainlink: USDT/USD Price Feed"
+  },
+  {
+    "address": "0xfed9871528e713b5038c4c44bbe7a315f56cadc6",
+    "label": "BorrowLogic"
+  },
+  {
+    "address": "0x5181c65117d6421bef9245b6d064be212ea72589",
+    "label": "0x5181_PancakeV3Pool"
+  },
+  {
+    "address": "0x238d72e179a581c98dc1996417a49818c7e509dc",
+    "label": "FIR"
+  },
+  {
+    "address": "0xb4818bb69478730ef4e33cc068dd94278e2766cb",
+    "label": "satUSD"
+  },
+  {
+    "address": "0xd955c9ba56fb1ab30e34766e252a97ccce3d31a6",
+    "label": "XPIN"
+  },
+  {
+    "address": "0x0567f2323251f0aab15c8dfb1967e4e8a7d42aee",
+    "label": "Chainlink: BNB/USD Price Feed"
+  },
+  {
+    "address": "0x6e332ff0bb52475304494e4ae5063c1051c7d735",
+    "label": "0x6e33_OptimizedTransparentUpgradeableProxy"
+  },
+  {
+    "address": "0xb247bce6f7ca0345174ee0d3860a36e7d72b5a9d",
+    "label": "DebtTokenWithLz"
+  },
+  {
+    "address": "0x08debfc510a2eb0148107da7ab8e96531323f4d4",
+    "label": "0x08de_PancakeV3Pool"
+  },
+  {
+    "address": "0x1b54cd932b6b751803c996cbef36280b53795f81",
+    "label": "0x1b54_PancakeV3Pool"
+  },
+  {
+    "address": "0x8d0d000ee44948fc98c9b98a4fa4921476f08b0d",
+    "label": "0x8d0d_USD1"
+  },
+  {
+    "address": "0xaf44a1e76f56ee12adbb7ba8acd3cbd474888122",
+    "label": "DUSD"
+  },
+  {
+    "address": "0xe6df05ce8c8301223373cf5b969afcb1498c5528",
+    "label": "KOGE"
+  },
+  {
+    "address": "0x10ed43c718714eb63d5aa57b78b54704e256024e",
+    "label": "PancakeSwap: Router v2"
+  }
+]

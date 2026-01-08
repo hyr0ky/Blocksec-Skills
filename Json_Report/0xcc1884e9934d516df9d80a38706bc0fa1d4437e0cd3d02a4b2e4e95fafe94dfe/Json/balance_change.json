@@ -1,0 +1,1255 @@
+[
+  {
+    "account": "0xc484ecd341f8e02d6685da4f6670684a7675303b",
+    "assets": [
+      {
+        "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "amount": "0.0001",
+        "iconUrl": "https://assets.blocksec.com/image/1663669189317-2.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": false,
+        "value": "-0.09860597"
+      },
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "180,352.778889543435661633",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "180309.56456019"
+      }
+    ],
+    "extremum": true,
+    "sign": true,
+    "totalValue": "180309.46595422"
+  },
+  {
+    "account": "0xfc8311f5242be8165ff3c005b9db16e62cebbe1a",
+    "assets": [
+      {
+        "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "amount": "0.000099999999999999",
+        "iconUrl": "https://assets.blocksec.com/icon/65a007cb-916d-490f-9438-b972e4549029.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0.09860596"
+      },
+      {
+        "address": "0x2877620d8df7456bfd74e4a72b635a924c1c2d1e",
+        "amount": "56.221215611909453424",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0"
+      },
+      {
+        "address": "0x726c1475be68374099be2ab8223fa11d715e732f",
+        "amount": "0.911645932689434503",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "0.09860596"
+  },
+  {
+    "account": "0x0000000000000000000000000000000000000000",
+    "assets": [
+      {
+        "address": "0x480f51beded3fc0c42f4a86f923700ea7859fbba",
+        "amount": "56.210894096889627379",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "0"
+  },
+  {
+    "account": "0x000000000000000000000000000000000000dead",
+    "assets": [
+      {
+        "address": "0x726c1475be68374099be2ab8223fa11d715e732f",
+        "amount": "46,130.385946936237121913",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "0"
+  },
+  {
+    "account": "0x049f1009bc8c5d0048732fe2f95c27c240214634",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "43.475971000262959246",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "43.46555372"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "43.46555372"
+  },
+  {
+    "account": "0x08debfc510a2eb0148107da7ab8e96531323f4d4",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "47.67561346037256433",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "47.6641899"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "47.6641899"
+  },
+  {
+    "account": "0x0ed943ce24baebf257488771759f9bf482c39706",
+    "assets": [
+      {
+        "address": "0x480f51beded3fc0c42f4a86f923700ea7859fbba",
+        "amount": "0.010321515019826045",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "0"
+  },
+  {
+    "account": "0x172fcd41e0913e95784454622d1c3724f546f849",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "514.518295499407802618",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "514.39501177"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "514.39501177"
+  },
+  {
+    "account": "0x1b54cd932b6b751803c996cbef36280b53795f81",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "47.319563403336040211",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "47.30822516"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "47.30822516"
+  },
+  {
+    "account": "0x1e8d7ab96323953fac85ab687f5d38b45344e62d",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "271.593045814456960564",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "271.5279694"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "271.5279694"
+  },
+  {
+    "account": "0x219cf5fc877f3dc7e5105496249797ed34cdfb4b",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "43.683431317474253415",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "43.67296433"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "43.67296433"
+  },
+  {
+    "account": "0x24618d12b5ea15bb6fe3c81bbb9e011b5d5b107c",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "95.890124004564694527",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "95.86714777"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "95.86714777"
+  },
+  {
+    "account": "0x247f51881d1e3ae0f759afb801413a6c948ef442",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "21.522735464787098478",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "21.5175784"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "21.5175784"
+  },
+  {
+    "account": "0x27820f8b2e7c5dbe1eef6805577c222afde1a191",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "224.926694686275793118",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "224.8728"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "224.8728"
+  },
+  {
+    "account": "0x2c3c320d49019d4f9a92352e947c7e5acfe47d68",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "64.533482876262512232",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "64.51802"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "64.51802"
+  },
+  {
+    "account": "0x30305b22fc2830b42908993e668b31b7234a9737",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "51.80604590377813708",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "51.79363265"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "51.79363265"
+  },
+  {
+    "account": "0x36696169c63e42cd08ce11f5deebbcebae652050",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "1,928.824892397221305495",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "1928.36272666"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "1928.36272666"
+  },
+  {
+    "account": "0x39d2d7bebd1487ffea308fab8a6fe2d737600e1a",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "52.004218929364573126",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "51.99175819"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "51.99175819"
+  },
+  {
+    "account": "0x3be400e891786c958c22e121abe71599c576effc",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "57.758033141383137362",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "57.74419373"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "57.74419373"
+  },
+  {
+    "account": "0x419f8539c423d66dc42bd80d6f0bdd6fd4c21dce",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "33.15543106486796212",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "33.14748669"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "33.14748669"
+  },
+  {
+    "account": "0x443fa7bbf35c09ee0ebb5e15f1ea3f0704b89d04",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "29.823406667247560466",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "29.81626068"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "29.81626068"
+  },
+  {
+    "account": "0x46cf1cf8c69595804ba91dfdd8d6b960c9b0a7c4",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "2,568.996875814188068115",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "2568.38131847"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "2568.38131847"
+  },
+  {
+    "account": "0x47a90a2d92a8367a91efa1906bfc8c1e05bf10c4",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "190.177833015311084083",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "190.1322645"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "190.1322645"
+  },
+  {
+    "account": "0x480f51beded3fc0c42f4a86f923700ea7859fbba",
+    "assets": [
+      {
+        "address": "0x726c1475be68374099be2ab8223fa11d715e732f",
+        "amount": "46,134.470989175723183084",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": false,
+        "value": "-108880.80460592"
+      },
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "218,193.153292104255399215",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": false,
+        "value": "-218140.87203065"
+      }
+    ],
+    "extremum": true,
+    "sign": false,
+    "totalValue": "327021.67663657"
+  },
+  {
+    "account": "0x4f31fa980a675570939b737ebdde0471a4be40eb",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "8,403.176128261319396597",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "8401.16264322"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "8401.16264322"
+  },
+  {
+    "account": "0x50203df8efcddba9755c886f086b9b2d537a15f9",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "37.645596468313230401",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "37.6365762"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "37.6365762"
+  },
+  {
+    "account": "0x5181c65117d6421bef9245b6d064be212ea72589",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "102.540902205408375817",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "102.51633237"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "102.51633237"
+  },
+  {
+    "account": "0x55d0119a43a0e2c54fd6eb1f17e3b883eedba602",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "42.570731870522859797",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "42.56053149"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "42.56053149"
+  },
+  {
+    "account": "0x5a92b8c51961d064d2bc97ba101498e56b557414",
+    "assets": [
+      {
+        "address": "0x726c1475be68374099be2ab8223fa11d715e732f",
+        "amount": "1.424280232184312756",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "0"
+  },
+  {
+    "account": "0x64f63bb92702449f67b15c3dc4f65c83d0bdf0b7",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "189.367015960771757027",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "189.32164173"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "189.32164173"
+  },
+  {
+    "account": "0x6510b17df2909fead6492905c72a66676547da7c",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "58.23954992976682552",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "58.22559515"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "58.22559515"
+  },
+  {
+    "account": "0x657187786583659b86c5f9d261fd1d65f56b28d7",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "73.718929886085636903",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "73.70126609"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "73.70126609"
+  },
+  {
+    "account": "0x7192966c6d3ab630ee60dbd4c1b39e9e8267f8cf",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "71.003987633875626392",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "70.98697436"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "70.98697436"
+  },
+  {
+    "account": "0x808a3f77c4be4e1ae5dab0f63cca2cbfde281dc5",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "29.099913612431245446",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "29.09294098"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "29.09294098"
+  },
+  {
+    "account": "0x813c0decbb1097fff46d0ed6a39fb5f6a83043f4",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "138.342208169996406773",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "138.30905999"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "138.30905999"
+  },
+  {
+    "account": "0x81c7294b66955824bc04acb642ae8dc58e6ce507",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "779.845768911995557914",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "779.65891006"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "779.65891006"
+  },
+  {
+    "account": "0x8bafe0bdd3eb9ae0539f5b32e771c1a72a189b7f",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "93.744902990875188507",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "93.72244077"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "93.72244077"
+  },
+  {
+    "account": "0x8c4c97d6a279c6a3eb63348c760ff0153aa779ee",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "41.347004437552523733",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "41.33709728"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "41.33709728"
+  },
+  {
+    "account": "0x8e6601b49a2c73fe64d01c057b796ca05f2a7348",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "51.793424637572389201",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "51.78101441"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "51.78101441"
+  },
+  {
+    "account": "0x927ae3c2cd88717a1525a55021af9612c3f04583",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "79.076307152802425386",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "79.05735967"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "79.05735967"
+  },
+  {
+    "account": "0x92b7807bf19b7dddf89b706143896d05228f3121",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "2,411.009431806758969429",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "2410.43172983"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "2410.43172983"
+  },
+  {
+    "account": "0x9485ff32b6b4444c21d5abe4d9a2283d127075a2",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "67.089233271302474182",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "67.07315802"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "67.07315802"
+  },
+  {
+    "account": "0x97620e003c03381eacbde7135f28d94303bb5672",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "74.135111038049568137",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "74.11734752"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "74.11734752"
+  },
+  {
+    "account": "0x9b00a09492a626678e5a3009982191586c444df9",
+    "assets": [
+      {
+        "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "amount": "0.000000000000000001",
+        "iconUrl": "https://assets.blocksec.com/icon/65a007cb-916d-490f-9438-b972e4549029.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0.0000000000000009835034246938"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "0.0000000000000009835034246938"
+  },
+  {
+    "account": "0x9c4ee895e4f6ce07ada631c508d1306db7502cce",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "627.907152342963513756",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "627.75669951"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "627.75669951"
+  },
+  {
+    "account": "0x9f8f4615ff5143aee365fa34f34196fb85be7650",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "359.705100462383329114",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "359.61891152"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "359.61891152"
+  },
+  {
+    "account": "0xa424c24c5cbfc377c3b6ae7355c3f30984664b16",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "59.289369202049891017",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "59.27516287"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "59.27516287"
+  },
+  {
+    "account": "0xa5dbeaf16fc031eae92175974f8d0a439be4ad17",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "85.478916208606292871",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "85.4584346"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "85.4584346"
+  },
+  {
+    "account": "0xa8f7f0792aa4ed4db3a33d9df30ee718ca049871",
+    "assets": [
+      {
+        "address": "0x726c1475be68374099be2ab8223fa11d715e732f",
+        "amount": "0.749621174833848819",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "0"
+  },
+  {
+    "account": "0xa9251ca9de909cb71783723713b21e4233fbf1b1",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "0.000000000000000001",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0.0000000000000000009995607908"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "0.0000000000000000009995607908"
+  },
+  {
+    "account": "0xaa16085314e99e2936165983af818e3c1914c909",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "43.928038527939254465",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "43.91751293"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "43.91751293"
+  },
+  {
+    "account": "0xac0fe1c4126e4a9b644adfc1303827e3bb5dddf3",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "159.756078241945398113",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "159.71779908"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "159.71779908"
+  },
+  {
+    "account": "0xae02717e94c9b5bae817601a49b4584f58324015",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "61.92401506943953985",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "61.90917745"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "61.90917745"
+  },
+  {
+    "account": "0xb4db9fcda97fd7b02eaf1e8317e6ddb04bacc1af",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "91.730015316145626938",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "91.70803588"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "91.70803588"
+  },
+  {
+    "account": "0xb67e5eaf770a384ab28029d08b9bc5ebe32beb0f",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "13,856.99714495972885621",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "13853.67686987"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "13853.67686987"
+  },
+  {
+    "account": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+    "assets": [
+      {
+        "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+        "amount": "0.0001",
+        "iconUrl": "https://assets.blocksec.com/image/1663669189317-2.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0.09860596"
+      },
+      {
+        "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+        "amount": "0.0001",
+        "iconUrl": "https://assets.blocksec.com/icon/65a007cb-916d-490f-9438-b972e4549029.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": false,
+        "value": "-0.09860597"
+      }
+    ],
+    "extremum": false,
+    "sign": false,
+    "totalValue": "0.000000010000000000001598322"
+  },
+  {
+    "account": "0xbe141893e4c6ad9272e8c04bab7e6a10604501a5",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "944.140465477324657669",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "943.91423998"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "943.91423998"
+  },
+  {
+    "account": "0xbee2c57e3a11220e2b948e26965daaa9dfd87a4a",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "89.32314100550920948",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "89.30173828"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "89.30173828"
+  },
+  {
+    "account": "0xca3f029a70d5d90000e614afd29e5c833f33cea5",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "71.556255429302103468",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "71.53910983"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "71.53910983"
+  },
+  {
+    "account": "0xcf59b8c8baa2dea520e3d549f97d4e49ade17057",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "1,825.418737069420016235",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "1824.98134848"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "1824.98134848"
+  },
+  {
+    "account": "0xd7af60112d7dfe0f914724e3407dd54424aaa19b",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "57.713083526178554217",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "57.69925489"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "57.69925489"
+  },
+  {
+    "account": "0xd945361cae76913239b0aac7a5891adcd32b42d1",
+    "assets": [
+      {
+        "address": "0x2877620d8df7456bfd74e4a72b635a924c1c2d1e",
+        "amount": "56.221215611909453424",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": false,
+        "value": "0"
+      },
+      {
+        "address": "0x480f51beded3fc0c42f4a86f923700ea7859fbba",
+        "amount": "56.221215611909453424",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": false,
+        "value": "-122.4337517"
+      },
+      {
+        "address": "0x726c1475be68374099be2ab8223fa11d715e732f",
+        "amount": "0.999494899778465093",
+        "iconUrl": "",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "0"
+      }
+    ],
+    "extremum": false,
+    "sign": false,
+    "totalValue": "122.4337517"
+  },
+  {
+    "account": "0xd9bba97fd4a12407ead371e71c07d4f0dbdc6a4d",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "46.752109751077922227",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "46.74090747"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "46.74090747"
+  },
+  {
+    "account": "0xe1acb466421ed24dd8bd381d1205bad0ad43ca9c",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "87.120624822260634422",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "87.09974984"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "87.09974984"
+  },
+  {
+    "account": "0xe5ce5bc4785cd2a246151364f5a190cee3fdb142",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "8.104568545790136986",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "8.10262661"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "8.10262661"
+  },
+  {
+    "account": "0xe6e51ea572502dbdf8b40834d0619f9a9144d3a5",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "61.404486449280810637",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "61.38977332"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "61.38977332"
+  },
+  {
+    "account": "0xe9388678f0542d5406145c3db85b5b754daff085",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "33.30751791303740656",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "33.29953709"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "33.29953709"
+  },
+  {
+    "account": "0xf4262c4dbf524f53851a5176bdc7d6c1e0fa82d8",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "93.917539848201599207",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "93.89503626"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "93.89503626"
+  },
+  {
+    "account": "0xf8b5df35f6ef1f9ab70d1d76b32d254983af55e3",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "50.623343141695983736",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "50.61121328"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "50.61121328"
+  },
+  {
+    "account": "0xfa09940612d7ae39f7f220f3ca6816bd72844577",
+    "assets": [
+      {
+        "address": "0x55d398326f99059ff775485246999027b3197955",
+        "amount": "92.844856544576036654",
+        "iconUrl": "https://assets.blocksec.com/icon/810ebed5-1cb7-4a60-827d-c7eb0c438c0e.png",
+        "isERC1155": false,
+        "isERC721": false,
+        "sign": true,
+        "value": "92.82260998"
+      }
+    ],
+    "extremum": false,
+    "sign": true,
+    "totalValue": "92.82260998"
+  }
+]

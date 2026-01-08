@@ -1,0 +1,78 @@
+[
+  {
+    "address": "0xa43fe16908251ee70ef74718545e4fe6c5ccec9f",
+    "label": "0xa43f_UNI-V2"
+  },
+  {
+    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "label": "WETH"
+  },
+  {
+    "address": "0x000000000000000000000000000000000000dead",
+    "label": "Null: 0x00...dEaD"
+  },
+  {
+    "address": "0x7a250d5630b4cf539739df2c5dacb4c659f2488d",
+    "label": "Uniswap V2: Router 2"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000001",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0xa89f4ca08f729364f0e1ce657c4b6d5ea60e1f91",
+    "label": "0xa89f_PEPESTR"
+  },
+  {
+    "address": "0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf",
+    "label": "cbBTC"
+  },
+  {
+    "address": "0x5f9b7e441e00373a83eee20f1366a7d32ec53d56",
+    "label": "0x5f9b_UNI-V2"
+  },
+  {
+    "address": "0xa72fecc67208490fbf0eaf851ceea6e174a3fe6f",
+    "label": "0xa72f_UNI-V2"
+  },
+  {
+    "address": "0x6982508145454ce325ddbe47a25d4ec3d2311933",
+    "label": "PEPE"
+  },
+  {
+    "address": "0x4250569cdce5065c96b597b5982f6e6d9c329714",
+    "label": "0x4250_PEPESTR"
+  },
+  {
+    "address": "0xbbbbbbbbbb9cc5e90e3b3af64bdaf62c37eeffcb",
+    "label": "Morpho: Morpho Blue"
+  },
+  {
+    "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "label": "Ether"
+  },
+  {
+    "address": "0x95cc9c7bf003d948dea3a5a95116f7fd9ca43778",
+    "label": "G5"
+  },
+  {
+    "address": "0x87870bca3f3fd6335c3f4ce8392d69350b4fa4e2",
+    "label": "Aave: Pool V3"
+  },
+  {
+    "address": "0x7458bfdc30034eb860b265e6068121d18fa5aa72",
+    "label": "FiatTokenV2_1"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000002",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000003",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000004",
+    "label": "Precompiled"
+  }
+]

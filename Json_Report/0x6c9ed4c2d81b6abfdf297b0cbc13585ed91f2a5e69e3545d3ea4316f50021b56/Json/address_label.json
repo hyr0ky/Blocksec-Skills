@@ -1,0 +1,70 @@
+[
+  {
+    "address": "0xaae35c003a323d291b7293618506aa612302b7cf",
+    "label": "0xaae3_Cake-LP"
+  },
+  {
+    "address": "0x10ed43c718714eb63d5aa57b78b54704e256024e",
+    "label": "PancakeSwap: Router v2"
+  },
+  {
+    "address": "0xb0720d8541cd2b6fc35ccc39ec84e84383a7000b",
+    "label": "Unidentified Exploiter"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000001",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000002",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000004",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "label": "BNB"
+  },
+  {
+    "address": "0x713630359cc9046869ad1642a7b61c23956425cc",
+    "label": "MSC"
+  },
+  {
+    "address": "0x12dabfce08ef59c24cdee6c488e05179fb8d64d9",
+    "label": "0x12da_Cake-LP"
+  },
+  {
+    "address": "0x3e5c63644e683549055b9be8653de26e0b4cd36e",
+    "label": "Safe: Singleton L2 1.3.0"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000003",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x02739be625f7a1cb196f42dceee630c394dd9faa",
+    "label": "XDK"
+  },
+  {
+    "address": "0x91334d03dd9b9de8d48b50fe389337eeb759aeb1",
+    "label": "MSCST"
+  },
+  {
+    "address": "0xe3cba5c0a8efaedce84751af2efddcf071d311a9",
+    "label": "0xe3cb_Cake-LP"
+  },
+  {
+    "address": "0x6278fa23fbe28b9736214e03cf2030f5ee1ccac9",
+    "label": "GnosisSafeProxy"
+  },
+  {
+    "address": "0xd3c304697f63b279cd314f92c19cdbe5e5b1631a",
+    "label": "GPC"
+  },
+  {
+    "address": "0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c",
+    "label": "WBNB"
+  }
+]

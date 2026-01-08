@@ -38,8 +38,8 @@ ENV/
 .ipynb_checkpoints
 
 # Project specific
-Json_Report/*/
-!Json_Report/.gitkeep
+# Json_Report/*/  # 已改为推送所有分析结果
+# !Json_Report/.gitkeep
 Vuln/*.md
 !Vuln/Vuln_Case.md
 

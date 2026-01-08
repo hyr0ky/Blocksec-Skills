@@ -1,0 +1,62 @@
+[
+  {
+    "address": "0x0000000000000000000000000000000000000003",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0xbcda9e0658f4eecf56a0bd099e6dbc0c91f6a8c2",
+    "label": "sil"
+  },
+  {
+    "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2",
+    "label": "WETH"
+  },
+  {
+    "address": "0x5ad6211cd3fde39a9cecb5df6f380b8263d1e277",
+    "label": "SushiSwap: WethMaker"
+  },
+  {
+    "address": "0x706ccdc380bae0ee0288cfcf833e45e387f29769",
+    "label": "Unidentified Exploiter"
+  },
+  {
+    "address": "0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f",
+    "label": "SushiSwap: Router"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000001",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000002",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0x0000000000000000000000000000000000000004",
+    "label": "Precompiled"
+  },
+  {
+    "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "label": "Ether"
+  },
+  {
+    "address": "0xdadb0d80178819f2319190d340ce9a924f783711",
+    "label": "BuilderNet"
+  },
+  {
+    "address": "0x2a11ccfb96223bd35ec24b2aac046fcc85035f3d",
+    "label": "0x2a11_SLP"
+  },
+  {
+    "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599",
+    "label": "WBTC"
+  },
+  {
+    "address": "0xceff51756c56ceffca006cd410b03ffc46dd3a58",
+    "label": "0xceff_SLP"
+  },
+  {
+    "address": "0xc0aee478e3658e2610c5f7a4a2e1777ce9e4f2ac",
+    "label": "SushiSwap: SushiV2Factory"
+  }
+]

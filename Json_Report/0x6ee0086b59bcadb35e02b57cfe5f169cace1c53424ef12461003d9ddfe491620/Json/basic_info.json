@@ -1,0 +1,43 @@
+{
+  "baseFee": "0",
+  "blockNumber": 71642266,
+  "callData": "0x692c73550000000000000000000000004ef1dcfdcf8f4b99deba2567c4110b06b649ae0f00000000000000000000000000000000000000000000000000000000000000160000000000000000000000000000000000000000000000000e043da617250000",
+  "chainId": 56,
+  "codeAuthorities": [
+    {
+      "authority": "0x724c2be714e21299917ee8a2b69cf0bfd09b9a55",
+      "codeAddress": "0x9da9267889ae3e02f801ad02805c5b1aa2912b79"
+    }
+  ],
+  "eventCount": 29,
+  "featureStatus": {
+    "debug": 0,
+    "simulation": 0,
+    "stateChange": 0,
+    "storageTrace": 0
+  },
+  "feeRecipient": "0x0dc5e1cae4d364d0c79c9ae6bddb5da49b10a7d9",
+  "formatValue": "0",
+  "gasLimit": 10000000,
+  "gasPrice": "0.05",
+  "gasUsed": 1358855,
+  "intTxnCount": 150,
+  "internalRevert": false,
+  "internalRevertMessage": "",
+  "isContractCreation": false,
+  "maxFee": "0.06",
+  "nonce": 3,
+  "priorityFee": "0.05",
+  "receiver": "0x724c2be714e21299917ee8a2b69cf0bfd09b9a55",
+  "revertMessage": "",
+  "sender": "0xdbdcc7625c993253ea38d2cc7ec0b00aea23022f",
+  "simulationEnable": true,
+  "sourceTxnHash": "0x6ee0086b59bcadb35e02b57cfe5f169cace1c53424ef12461003d9ddfe491620",
+  "status": true,
+  "timestamp": 1765733499000,
+  "transactionFee": "0.00006794275",
+  "txnHash": "0x6ee0086b59bcadb35e02b57cfe5f169cace1c53424ef12461003d9ddfe491620",
+  "txnIndex": 121,
+  "type": 4,
+  "value": "0"
+}
