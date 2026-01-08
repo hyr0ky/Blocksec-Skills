@@ -55,18 +55,29 @@ Blocksec-Skills/
 │       ├── report.md         # 核心报告
 │       ├── Vuln_function.md  # 函数级调用与代码映射
 │       ├── trace.md          # 完整调用时间线
-│       ├── contract_code.sol # 受害合约源代码
-│       ├── basic_info.json
-│       ├── balance_change.json
-│       ├── fundflow.json
-│       ├── state_change.json
-│       └── trace.json
+│       ├── Code/             # 合约源代码（按地址哈希分组）
+│       └── Json/             # 原始JSON数据
+│           ├── basic_info.json
+│           ├── balance_change.json
+│           ├── fundflow.json
+│           ├── state_change.json
+│           ├── trace.json
+│           └── debug_code.json
 ├── Vuln/                     # AI 生成的漏洞报告
 │   ├── Vuln_Case.md         # 报告模板
 │   └── {tx前6位}.md         # 完整分析报告
 ├── .qoder/                   # Qoder AI 配置
 │   └── rules/
-│       └── AGENTS.md        # AI 分析规则
+│       ├── AGENTS.md        # AI 分析规则
+│       └── resources/
+│           ├── examples/           # 典型攻击模式案例
+│           │   ├── flawed_liquidity_calc_case.md
+│           │   ├── mscst_case.md
+│           │   ├── valinity_case.md
+│           │   ├── vault_case.md
+│           │   └── wadjet_case.md
+│           └── references/         # 分析方法论
+│               └── analysis_checklist.md
 └── README.md
 ```
 
@@ -172,30 +183,81 @@ python main.py --chain-id 1 --txn-hash 0x... --output-dir /custom/path
 
 ---
 
-## 🤖 AI 辅助分析
+## 🧠 AI 辅助分析与攻击模式库
 
-本项目配合 **Qoder AI** 可以自动生成专业的漏洞分析报告。
+本项目配合 **Qoder AI** 可以自动生成专业的漏洞分析报告，并内置了**5个典型攻击模式案例库**。
 
-### 使用 Qoder AI 生成报告
+### 📚 内置攻击模式案例库
+
+项目包含精选的真实攻击案例分析，位于 `.qoder/rules/resources/examples/`：
+
+#### 1️⃣ **流动性计算缺陷** (`flawed_liquidity_calc_case.md`)
+- **真实案例**：RWB Token (BSC, 0xcc1884, ~$180.4K)
+- **漏洞类型**：CWE-682 (Incorrect Calculation)
+- **攻击手法**：未验证合约 removeLiquidity 基于输入金额计算LP
+- **关键点**：反编译分析、业务逻辑缺陷、价格操纵套利
+
+#### 2️⃣ **原子三明治攻击** (`mscst_case.md`)
+- **真实案例**：MSCST Token (Ethereum)
+- **漏洞类型**：3-token 系统 reward 释放缺陷
+- **攻击手法**：releaseReward + sync 操纵储备比例
+- **关键点**：GPC 代币系统、reward 计算公式、sync 时机
+
+#### 3️⃣ **Rebalancing 业务逻辑缺陷** (`valinity_case.md`)
+- **真实案例**：Valinity DeFi
+- **漏洞类型**：小池子 + acquireByLTVDisparity 被利用
+- **攻击手法**：操纵小池子后触发 rebalance 获利
+- **关键点**：池子 TVL 阈值、LTV 计算、业务逻辑漏洞
+
+#### 4️⃣ **Vault 访问控制缺失** (`vault_case.md`)
+- **真实案例**：Vault Exploit (0x6c9ed4)
+- **漏洞类型**：CWE-284 (Missing Authorization)
+- **攻击手法**：withdraw/redeem 缺少 shares 余额检查
+- **关键点**：ERC4626 标准、share balance 验证、访问控制
+
+#### 5️⃣ **利润翻倍公式错误** (`wadjet_case.md`)
+- **真实案例**：WADJET Token (Ethereum, 0x6ee008)
+- **漏洞类型**：ROI 计算公式缺陷 (2^N 级增长)
+- **攻击手法**：profit += (profit + calculateProfit) 指数放大
+- **关键点**：Morpho Vault、利润累加逻辑、Ponzi 模式
+
+### 🔍 分析方法论资源
+
+位于 `.qoder/rules/resources/references/`：
+
+- **`analysis_checklist.md`** - 系统化分析清单
+  - 四个分析阶段：信息收集 / 初步判断 / 深度分析 / 报告生成
+  - 权限、参数、副作用、资金流向的详细检查项
+  - 常见陷阱和案例教训
+
+### 🚀 使用 Qoder AI 生成报告
 
 1. **配置 Qoder AI**
    - 项目已包含 `.qoder/rules/AGENTS.md` 配置文件
    - AI 会自动加载 `Vuln/Vuln_Case.md` 模板
+   - 渐进式加载典型案例进行对比分析
 
 2. **分析流程**
    ```
    步骤1: 运行 blocksec-chrome 工具
    步骤2: AI 读取 report.md 和 Vuln_function.md
-   步骤3: AI 根据模板生成完整分析报告
-   步骤4: 报告保存到 Vuln/{tx前6位}.md
+   步骤3: AI 加载相关攻击模式案例
+   步骤4: AI 根据模板生成完整分析报告
+   步骤5: 报告保存到 Vuln/{tx前6位}.md
    ```
 
 3. **报告特点**
    - 📊 使用 Mermaid 图表展示攻击流程
-   - 🎯 函数级代码分析
-   - 🔍 漏洞根因推断
-   - 🛡️ 修复建议
-   - ⏱️ 攻击时间线
+   - 🎯 函数级代码分析与漏洞定位
+   - 🔍 漏洞根因推断和 CWE 编号
+   - 🛡️ 修复建议和防御措施
+   - ⏱️ 攻击时间线重构
+
+4. **智能模式匹配**
+   - AI 自动识别攻击特征
+   - 加载匹配的典型案例进行对比
+   - 避免常见误判（如表象与根因混淆）
+   - 提供精准的检测清单和分析方法
 
 ---
 
@@ -296,21 +358,50 @@ with BlocksecAnalyzer(headless=True) as analyzer:
 
 本工具可以自动识别以下常见攻击模式：
 
-### 🔥 闪电贷 + 权限缺陷
+### 🔥 流动性计算缺陷 (Flawed Liquidity Calculation)
+- **特征**：未验证合约 removeLiquidity 计算错误 → 低价获得代币 → 价格操纵套利
+- **示例**：RWB 攻击 (0xcc1884) - LP数量基于输入金额而非份额比例
+- **检测要点**：反编译未验证合约，检查LP计算逻辑
+
+### 🔥 原子三明治攻击 (Atomic Sandwich)
+- **特征**：3-token系统 + releaseReward 函数缺陷 → sync 操纵储备
+- **示例**：MSCST 攻击 - 利用 reward 释放机制操纵价格
+- **检测要点**：分析 reward 计算公式、检查 sync 调用时机
+
+### 🔥 Vault 访问控制缺失 (Missing Authorization)
+- **特征**：withdraw/redeem 缺少 shares 余额检查 → 直接提取资产
+- **示例**：Vault 政击 (0x6c9ed4) - 任意用户可提取全部资产
+- **检测要点**：检查是否验证 msg.sender 持有的 shares
+
+### 🔥 利润翻倍公式错误 (ROI Calculation Flaw)
+- **特征**：profit += (profit + calculateProfit) 导致指数级放大
+- **示例**：WADJET 政击 (0x6ee008) - 利润计算 2^N 级增长
+- **检测要点**：分析利润/奖励计算公式，查找累加逻辑错误
+
+### 🔥 Rebalancing 业务逻辑缺陷
+- **特征**：小池子 + acquireByLTVDisparity 可被利用
+- **示例**：Valinity 政击 (0x7f1406) - 操纵小池子后触发 rebalance
+- **检测要点**：分析 rebalancing 触发条件，检查池子 TVL 阈值
+
+### 🔥 闪电贷 + 权限缺陷 (Flash Loan + Access Control)
 - **特征**：大额 WETH/ETH 借贷 → 调用管理函数 → 参数清零
 - **示例**：攻击者在闪电贷回调中调用 `setStakingRequirement(0)`
+- **检测要点**：检查 onlyOwner/onlyAdmin 修饰符实现
 
-### 🔥 闪电贷 + 价格操纵
+### 🔥 闪电贷 + 价格操纵 (Flash Loan + Price Manipulation)
 - **特征**：大额借贷影响 AMM 价格 → 套利交易
 - **示例**：操纵 Uniswap 池价格进行套利
+- **检测要点**：分析价格预言机使用，检查 TWAP 保护
 
-### 🔥 重入攻击
+### 🔥 重入攻击 (Reentrancy)
 - **特征**：在 fallback 中重复调用 withdraw
-- **示例**：The DAO 攻击模式
+- **示例**：The DAO 政击模式
+- **检测要点**：检查 nonReentrant 修饰符，Checks-Effects-Interactions 模式
 
-### 🔥 逻辑漏洞
+### 🔥 逻辑漏洞 (Logic Bugs)
 - **特征**：整数溢出、除零错误、权限检查缺失
 - **示例**：`onlyAdministrator()` 修饰符被绕过
+- **检测要点**：代码审计、边界条件测试
 
 ---
 
