@@ -42,7 +42,6 @@ Json_Report/*/
 !Json_Report/.gitkeep
 Vuln/*.md
 !Vuln/Vuln_Case.md
-.qoder/
 
 # Logs
 *.log
