@@ -9,7 +9,6 @@ import sys
 import json
 from pathlib import Path
 from analyzers import BlocksecAnalyzer
-from utils.contract_fetcher import ContractFetcher
 
 
 def analyze_blocksec_transaction(
@@ -41,14 +40,19 @@ def analyze_blocksec_transaction(
         # 使用 Selenium 获取受害者合约源代码
         try:
             contract_output_path = Path(output_dir) / txn_hash
+            json_dir = contract_output_path / "Json"
+            
             report_file = contract_output_path / "report.md"
-            trace_file = contract_output_path / "trace.json"
-            label_file = contract_output_path / "address_label.json"
+            trace_file = json_dir / "trace.json"
+            label_file = json_dir / "address_label.json"
+            debug_code_file = json_dir / "debug_code.json"
 
             victim_address = ""
+            attacker_address = ""
             if report_file.exists():
                 report_content = report_file.read_text(encoding="utf-8")
                 victim_address = extract_victim_address(report_content)
+                attacker_address = extract_attacker_address(report_content)
 
             # 先解析 trace 调用时间线，方便人工定位
             if trace_file.exists():
@@ -56,32 +60,33 @@ def analyze_blocksec_transaction(
                     trace_path=trace_file,
                     label_path=label_file if label_file.exists() else None,
                     only_contract=victim_address or None,
+                    attacker_address=attacker_address or "",
                 )
                 trace_md_file = contract_output_path / "trace.md"
                 trace_md_file.write_text(trace_md, encoding="utf-8")
                 print(f"[✓] trace.md")
 
-            # 然后使用 Selenium 获取受害者合约源代码
-            if report_file.exists():
+            # 使用 debug_code.json 生成合约代码和 Vuln_function.md
+            if debug_code_file.exists():
+                # 提取并保存所有合约源代码到 Code 目录
+                _extract_contract_codes_from_debug(
+                    debug_code_path=debug_code_file,
+                    output_path=contract_output_path,
+                )
+                
+                # 生成 Vuln_function.md
                 if victim_address:
-                    fetcher = ContractFetcher(chain_id)
-                    code = fetcher.fetch_contract_code_with_selenium(
-                        driver=analyzer.driver,
-                        address=victim_address,
-                        wait_time=8,
+                    vuln_md = _generate_vuln_function_from_debug_code(
+                        debug_code_path=debug_code_file,
+                        trace_path=trace_file,
+                        label_path=label_file if label_file.exists() else None,
+                        victim_address=victim_address,
+                        attacker_address=attacker_address,
                     )
-                    if code:
-                        contract_output_path.mkdir(parents=True, exist_ok=True)
-                        fetcher.save_contract_code(code, contract_output_path)
-                        # 生成函数调用与代码映射报告
-                        vuln_md = _generate_vuln_function_markdown(
-                            trace_md_path=contract_output_path / "trace.md",
-                            contract_path=contract_output_path / "contract_code.sol",
-                            victim_address=victim_address,
-                        )
+                    if vuln_md:
                         vuln_file = contract_output_path / "Vuln_function.md"
                         vuln_file.write_text(vuln_md, encoding="utf-8")
-                        print(f"[✓] contract_code.sol + Vuln_function.md")
+                        print(f"[✓] Vuln_function.md")
         except Exception as e:
             print(f"[⚠️] 获取受害者合约源代码或解析 trace 失败: {e}")
         
@@ -131,6 +136,67 @@ def _load_labels(label_path: Path) -> dict:
         if addr and label:
             labels[addr] = label
     return labels
+
+
+def _extract_contract_codes_from_debug(
+    debug_code_path: Path,
+    output_path: Path,
+) -> None:
+    """从 debug_code.json 提取所有合约源代码并保存为 .sol 文件"""
+    if not debug_code_path.exists():
+        print(f"[⚠️] debug_code.json 文件不存在: {debug_code_path}")
+        return
+
+    try:
+        # 读取 debug_code.json
+        with open(debug_code_path, 'r', encoding='utf-8') as f:
+            debug_data = json.load(f)
+        
+        code_files_map = debug_data.get("codeFilesMap", {})
+        
+        if not code_files_map or not isinstance(code_files_map, dict):
+            print("[⚠️] debug_code.json 中未找到有效的 codeFilesMap")
+            return
+        
+        # 创建 Code 目录
+        code_dir = output_path / "Code"
+        code_dir.mkdir(parents=True, exist_ok=True)
+        
+        saved_count = 0
+        # 遍历所有合约哈希
+        for code_hash, files in code_files_map.items():
+            if not isinstance(files, list):
+                continue
+            
+            # 为每个合约哈希创建子目录 (使用哈希前8位作为目录名)
+            hash_short = code_hash[:10] if code_hash.startswith("0x") else code_hash[:8]
+            contract_dir = code_dir / hash_short
+            contract_dir.mkdir(parents=True, exist_ok=True)
+            
+            # 保存该合约的所有文件
+            for file_info in files:
+                if not isinstance(file_info, dict):
+                    continue
+                
+                code_content = file_info.get("code", "")
+                file_name = file_info.get("fileName", "")
+                file_path_str = file_info.get("path", "")
+                
+                if not code_content or not file_name:
+                    continue
+                
+                # 保存文件
+                sol_file = contract_dir / file_name
+                sol_file.write_text(code_content, encoding="utf-8")
+                saved_count += 1
+        
+        if saved_count > 0:
+            print(f"[✓] 已提取 {saved_count} 个合约文件到 Code 目录")
+        else:
+            print("[⚠️] 未提取到任何合约文件")
+            
+    except Exception as e:
+        print(f"[⚠️] 提取合约代码失败: {e}")
 
 
 def _format_addr(addr: str, labels: dict) -> str:
@@ -316,7 +382,12 @@ def _pretty_print_trace(trace_path: Path, label_path: Path = None, only_contract
     print("===============  TRACE 解析结束  ===============")
 
 
-def _generate_trace_markdown(trace_path: Path, label_path: Path = None, only_contract: str = None) -> str:
+def _generate_trace_markdown(
+    trace_path: Path,
+    label_path: Path = None,
+    only_contract: str = None,
+    attacker_address: str = "",
+) -> str:
     """生成 trace.json 的人类可读 Markdown 文本"""
     if not trace_path.exists():
         return f"[⚠️] trace.json 文件不存在: {trace_path}"
@@ -340,10 +411,13 @@ def _generate_trace_markdown(trace_path: Path, label_path: Path = None, only_con
     items.sort(key=lambda x: x[0])
 
     only_contract = (only_contract or "").lower()
+    attacker_address = (attacker_address or "").lower()
     call_stack = []  # 简单的基于 fromAddress 的调用栈
 
     lines = []
     lines.append("# TRACE 调用时间线")
+    lines.append("")
+    lines.append("> **过滤规则**: 只显示攻击者对外部合约的调用 + 受害者合约相关调用")
     lines.append("")
 
     for node_id, node in items:
@@ -376,25 +450,36 @@ def _generate_trace_markdown(trace_path: Path, label_path: Path = None, only_con
         else:
             depth = len(call_stack)
 
-        # 过滤 only_contract（如指定则只保留与该合约直接相关的节点）
-        if only_contract:
-            addr = ""
-            if node_type == 0:
-                inv = node.get("invocation", {}) or {}
-                addr_to = (inv.get("address") or "").lower()
-                addr_from = (inv.get("fromAddress") or "").lower()
-                if addr_to != only_contract and addr_from != only_contract:
-                    continue
-            elif node_type == 3:
+        # 新的过滤逻辑：只保留政击者对外部合约的调用 + 受害者合约相关调用
+        should_include = False
+        
+        if node_type == 0:
+            inv = node.get("invocation", {}) or {}
+            addr_to = (inv.get("address") or "").lower()
+            addr_from = (inv.get("fromAddress") or "").lower()
+            
+            # 情兵1：攻击者直接调用外部合约
+            if attacker_address and addr_from == attacker_address:
+                should_include = True
+            
+            # 情兵2：与受害者合约相关的调用
+            if only_contract and (addr_to == only_contract or addr_from == only_contract):
+                should_include = True
+                
+        elif node_type in [3, 4]:  # SLOT READ/WRITE
+            # 只保留受害者合约的状态变化
+            if node_type == 3:
                 rd = node.get("slotReadData", {}) or {}
                 addr = (rd.get("contract") or "").lower()
-                if addr != only_contract:
-                    continue
-            elif node_type == 4:
+            else:
                 wd = node.get("slotWriteData", {}) or {}
                 addr = (wd.get("contract") or "").lower()
-                if addr != only_contract:
-                    continue
+            
+            if only_contract and addr == only_contract:
+                should_include = True
+        
+        if not should_include:
+            continue
 
         indent = "  " * depth
 
@@ -487,137 +572,299 @@ def _generate_trace_markdown(trace_path: Path, label_path: Path = None, only_con
     return "\n".join(lines)
 
 
-def _generate_vuln_function_markdown(trace_md_path: Path, contract_path: Path, victim_address: str) -> str:
-    """根据 trace.md 和合约源码生成 Vuln_function.md 内容"""
-    if not trace_md_path.exists():
-        return f"[⚠️] trace.md 文件不存在: {trace_md_path}"
-    if not contract_path.exists():
-        return f"[⚠️] contract_code.sol 文件不存在: {contract_path}"
+def _generate_vuln_function_from_debug_code(
+    debug_code_path: Path,
+    trace_path: Path,
+    label_path: Path = None,
+    victim_address: str = "",
+    attacker_address: str = "",
+) -> str:
+    """根据 debug_code.json 和 trace.json 生成 Vuln_function.md 内容"""
+    if not debug_code_path.exists():
+        return f"[⚠️] debug_code.json 文件不存在: {debug_code_path}"
+    if not trace_path.exists():
+        return f"[⚠️] trace.json 文件不存在: {trace_path}"
 
-    trace_text = trace_md_path.read_text(encoding="utf-8")
-    trace_lines = trace_text.splitlines()
-
-    # 计算受害者地址的缩写形式，便于匹配 "-> 0xb9d195...d158"
-    short_victim = _short_addr(victim_address)
-
-    # 从 trace 中收集 "调用受害合约" 的片段，按函数分组
-    func_traces: Dict[str, Dict[str, Any]] = {}
-    i = 0
-    while i < len(trace_lines):
-        line = trace_lines[i]
-        # 只关注包含 "::" 且指向受害合约的调用行
-        if "::" in line and "->" in line and short_victim in line:
-            # 函数签名在 "::" 之后
-            try:
-                func_part = line.split("::", 1)[1].strip()
-            except Exception:
-                i += 1
-                continue
-            if not func_part:
-                i += 1
-                continue
-            func_name = func_part.split("(", 1)[0].strip()
-
-            # 捕获从这一行开始，到下一段空行前的所有内容，作为该调用的 trace 片段
-            snippet_lines = [line]
-            j = i + 1
-            while j < len(trace_lines) and trace_lines[j].strip() != "":
-                snippet_lines.append(trace_lines[j])
-                j += 1
-
-            if func_name not in func_traces:
-                func_traces[func_name] = {
-                    "signature": func_part,
-                    "trace": snippet_lines,
-                }
-
-            i = j
-        else:
-            i += 1
-
-    # 解析合约源码，按函数名提取起止行号
-    source_text = contract_path.read_text(encoding="utf-8")
-    source_lines = source_text.splitlines()
-    func_spans: Dict[str, Any] = {}
-
-    line_count = len(source_lines)
-    idx = 0
-    while idx < line_count:
-        line = source_lines[idx]
-        if "function " in line:
-            # 尝试从这一行提取函数名
-            sig_part = line.split("function ", 1)[1]
-            sig_part = sig_part.strip()
-            if not sig_part:
-                idx += 1
-                continue
-            name_token = sig_part.split("(", 1)[0].strip().split()[0]
-            func_name = name_token
-
-            # 找到函数体的花括号范围
-            brace_count = line.count("{") - line.count("}")
-            start_idx = idx
-            j = idx
-            # 如果当前行没有 "{"，向后寻找
-            while brace_count <= 0 and j + 1 < line_count:
-                j += 1
-                brace_count += source_lines[j].count("{") - source_lines[j].count("}")
-            # 继续直到花括号平衡
-            while brace_count > 0 and j + 1 < line_count:
-                j += 1
-                brace_count += source_lines[j].count("{") - source_lines[j].count("}")
-
-            end_idx = j
-            start_line_no = start_idx + 1  # 1-based
-            end_line_no = end_idx + 1
-
-            # 只记录第一次出现的 span
-            if func_name not in func_spans:
-                func_spans[func_name] = {
-                    "start": start_line_no,
-                    "end": end_line_no,
-                }
-
-            idx = j + 1
-        else:
-            idx += 1
-
-    # 组装 Vuln_function.md
-    lines = []
-    lines.append("# 受害合约函数调用与代码映射")
-    lines.append("")
-    lines.append("## Trace")
-    lines.append("```text")
-    for func_name, info in func_traces.items():
-        for l in info["trace"]:
-            lines.append(l)
+    try:
+        # 读取 debug_code.json
+        with open(debug_code_path, 'r', encoding='utf-8') as f:
+            debug_data = json.load(f)
+        
+        # 读取 trace.json
+        with open(trace_path, 'r', encoding='utf-8') as f:
+            trace_data = json.load(f)
+        
+        # 读取标签
+        labels = _load_labels(label_path) if label_path else {}
+        
+        code_data_map = debug_data.get("codeDataMap", {})
+        code_files_map = debug_data.get("codeFilesMap", {})
+        code_location_map = debug_data.get("codeLocationMap", {})
+        trace_data_map = trace_data.get("dataMap", {})
+        
+        victim_address_lower = victim_address.lower()
+        attacker_address_lower = attacker_address.lower()
+        short_victim = _short_addr(victim_address)
+        
+        # 构建文件索引到源代码的映射
+        file_index_to_code = {}
+        for code_hash, files in code_files_map.items():
+            if isinstance(files, list):
+                for file_info in files:
+                    file_idx = file_info.get("fileIndex")
+                    code_content = file_info.get("code", "")
+                    file_name = file_info.get("fileName", "")
+                    if file_idx is not None:
+                        file_index_to_code[(code_hash, file_idx)] = {
+                            "code": code_content,
+                            "name": file_name,
+                        }
+        
+        # 第1步：递归识别攻击者创建的所有合约（包括子合约、孙合约等）
+        attacker_created_contracts = set()
+        if attacker_address_lower:
+            # 第一轮：找攻击者直接创建的合约
+            first_gen = set()
+            for node_id, node in trace_data_map.items():
+                if node.get("nodeType") == 0:
+                    inv = node.get("invocation", {})
+                    op = inv.get("operation", "")
+                    from_addr = (inv.get("fromAddress") or "").lower()
+                    to_addr = (inv.get("address") or "").lower()
+                    
+                    if op in ["CREATE", "CREATE2"] and from_addr == attacker_address_lower:
+                        if to_addr:
+                            first_gen.add(to_addr)
+                            attacker_created_contracts.add(to_addr)
+                            print(f"[DEBUG] 攻击者直接创建: {to_addr}")
+            
+            # 递归查找子合约（最多3层）
+            current_gen = first_gen
+            for depth in range(3):
+                if not current_gen:
+                    break
+                next_gen = set()
+                for node_id, node in trace_data_map.items():
+                    if node.get("nodeType") == 0:
+                        inv = node.get("invocation", {})
+                        op = inv.get("operation", "")
+                        from_addr = (inv.get("fromAddress") or "").lower()
+                        to_addr = (inv.get("address") or "").lower()
+                        
+                        if op in ["CREATE", "CREATE2"] and from_addr in current_gen:
+                            if to_addr and to_addr not in attacker_created_contracts:
+                                next_gen.add(to_addr)
+                                attacker_created_contracts.add(to_addr)
+                                print(f"[DEBUG] 第{depth+2}层子合约: {to_addr} (由 {from_addr[:10]}... 创建)")
+                current_gen = next_gen
+        
+        # 第2步：收集关键调用（扩展过滤逻辑）
+        important_calls = []
+        
+        for node_id, node in trace_data_map.items():
+            if node.get("nodeType") == 0:  # 调用类型
+                inv = node.get("invocation", {})
+                to_addr = (inv.get("address") or "").lower()
+                from_addr = (inv.get("fromAddress") or "").lower()
+                
+                decoded = inv.get("decodedMethod") or {}
+                func_name = decoded.get("name", "unknown")
+                func_sig = decoded.get("signature", "")
+                
+                is_important = False
+                call_type = ""
+                priority = 0  # 优先级，数字越大越重要
+                
+                # 情兵1: 调用了受害者合约
+                if to_addr == victim_address_lower:
+                    is_important = True
+                    call_type = "受害者合约被调用"
+                    priority = 2
+                
+                # 情兵2: 攻击者直接调用
+                if attacker_address_lower and from_addr == attacker_address_lower:
+                    is_important = True
+                    call_type = "攻击者直接调用"
+                    priority = 3
+                
+                # 情兵3: 攻击者创建的合约调用外部合约（⚠️ 关键改进）
+                if from_addr in attacker_created_contracts:
+                    is_important = True
+                    call_type = "攻击合约调用外部"
+                    priority = 4  # 最高优先级，因为这可能是漏洞入口
+                
+                if is_important:
+                    important_calls.append({
+                        "node_id": node_id,
+                        "func_name": func_name,
+                        "func_sig": func_sig,
+                        "from_addr": from_addr,
+                        "to_addr": to_addr,
+                        "invocation": inv,
+                        "call_type": call_type,
+                        "priority": priority,
+                    })
+        
+        if not important_calls:
+            return "[⚠️] 未找到与受害者合约或攻击者相关的调用"
+        
+        # 按优先级和 node_id 排序
+        important_calls.sort(key=lambda x: (-x["priority"], int(x["node_id"])))
+        
+        # 按函数名分组
+        func_groups = {}
+        for call in important_calls:
+            key = f"{call['to_addr']}_{call['func_name']}"
+            if key not in func_groups:
+                func_groups[key] = []
+            func_groups[key].append(call)
+        
+        # 生成 Markdown
+        lines = []
+        lines.append("# 关键函数调用与代码映射")
         lines.append("")
-    lines.append("```")
-    lines.append("")
-
-    lines.append("## Code")
-    for func_name, info in func_traces.items():
-        signature = info["signature"]
-        display_name = signature if signature else f"{func_name}()"
-        lines.append(f"### {display_name}")
-        span = func_spans.get(func_name)
-        if span:
-            start = span["start"] - 1  # 转为 0-based
-            end = span["end"]  # end 本身是 1-based inclusive，用作切片的右边界
-            func_code_lines = source_lines[start:end]
-            lines.append("```solidity")
-            for line_no in range(start, end):
-                actual_line = source_lines[line_no] if line_no < len(source_lines) else ""
-                lines.append(f"{line_no + 1:4d} | {actual_line}")
-            lines.append("```")
-        else:
-            lines.append("```text")
-            lines.append("未在 contract_code.sol 中找到该函数定义")
-            lines.append("```")
+        lines.append("> **分析范围**: 攻击者直接调用 + 攻击合约调用外部 + 受害者合约被调用")
         lines.append("")
-
-    return "\n".join(lines)
-
+        
+        # 统计信息
+        if attacker_created_contracts:
+            lines.append(f"> **攻击者创建的合约**: {len(attacker_created_contracts)} 个")
+            for addr in list(attacker_created_contracts)[:3]:
+                lines.append(f">   - `{addr}`")
+            lines.append("")
+        
+        # 输出 Trace 部分
+        lines.append("## Trace")
+        lines.append("```text")
+        for key, calls in func_groups.items():
+            for call in calls:
+                node_id = call["node_id"]
+                inv = call["invocation"]
+                op = inv.get("operation", "CALL")
+                status = inv.get("status", False)
+                gas_used = inv.get("gasUsed", 0)
+                value = inv.get("value", "0")
+                
+                from_fmt = _format_addr(call["from_addr"], labels)
+                to_fmt = _format_addr(call["to_addr"], labels)
+                
+                header = f"[{node_id}] {op} {from_fmt} -> {to_fmt}"
+                if call["func_sig"]:
+                    header += f" :: {call['func_sig']}"
+                elif call["func_name"] != "unknown":
+                    header += f" :: {call['func_name']}"
+                
+                header += f" \u26a0\ufe0f ({call['call_type']})"
+                
+                lines.append(header)
+                lines.append(f"      status={'OK' if status else 'FAIL'}, gasUsed={gas_used}, value={value}")
+                
+                # 输出参数
+                decoded = inv.get("decodedMethod", {}) or {}
+                call_params = decoded.get("callParams", [])
+                if call_params:
+                    arg_strs = []
+                    for p in call_params:
+                        arg_name = p.get("name", "")
+                        arg_type = p.get("type", "")
+                        arg_val = p.get("value")
+                        arg_strs.append(f"{arg_name}:{arg_type}={arg_val}")
+                    lines.append("      args: " + ", ".join(arg_strs))
+                
+                lines.append("")
+        lines.append("```")
+        lines.append("")
+        
+        # 输出 Code 部分
+        lines.append("## Code")
+        for key, calls in func_groups.items():
+            if not calls or len(calls) == 0:
+                continue
+                
+            # 使用第一个调用的签名
+            first_call = calls[0]
+            func_sig = first_call.get("func_sig", "")
+            func_name = first_call.get("func_name", "unknown")
+            to_addr = first_call.get("to_addr", "")
+            call_type = first_call.get("call_type", "")
+            display_name = func_sig if func_sig else f"{func_name}()"
+            
+            lines.append(f"### {display_name}")
+            lines.append(f"**合约地址:** `{to_addr}`")
+            lines.append(f"**调用类型:** {call_type}")
+            lines.append("")
+            
+            # 查找函数定义位置和调用位置
+            node_id = first_call.get("node_id", "")
+            location = code_location_map.get(str(node_id), {})
+            def_location = location.get("defCodeLocation", {}) if location else {}
+            call_location = location.get("callCodeLocation", {}) if location else {}
+            
+            # 显示函数定义
+            def_code_hash = def_location.get("codeHash", "")
+            def_file_index = def_location.get("fileIndex", 0)
+            def_start_line = def_location.get("startLine", 0)
+            def_end_line = def_location.get("endLine", 0)
+            def_sourced = def_location.get("sourced", False)
+            
+            if def_sourced and def_code_hash and (def_code_hash, def_file_index) in file_index_to_code:
+                file_data = file_index_to_code[(def_code_hash, def_file_index)]
+                code_content = file_data["code"]
+                file_name = file_data["name"]
+                
+                code_lines = code_content.splitlines()
+                
+                lines.append(f"**函数定义文件:** `{file_name}`")
+                lines.append("")
+                lines.append("```solidity")
+                
+                # 输出函数代码 (1-based line numbers)
+                for line_no in range(def_start_line, def_end_line + 1):
+                    if line_no > 0 and line_no <= len(code_lines):
+                        actual_line = code_lines[line_no - 1]
+                        lines.append(f"{line_no:4d} | {actual_line}")
+                
+                lines.append("```")
+            else:
+                lines.append("```text")
+                lines.append("未找到函数定义位置")
+                lines.append("```")
+            
+            lines.append("")
+            
+            # 显示调用位置（如果存在）
+            call_code_hash = call_location.get("codeHash", "")
+            call_file_index = call_location.get("fileIndex", 0)
+            call_start_line = call_location.get("startLine", 0)
+            call_end_line = call_location.get("endLine", 0)
+            call_sourced = call_location.get("sourced", False)
+            
+            if call_sourced and call_code_hash and (call_code_hash, call_file_index) in file_index_to_code:
+                call_file_data = file_index_to_code[(call_code_hash, call_file_index)]
+                call_code_content = call_file_data["code"]
+                call_file_name = call_file_data["name"]
+                
+                call_code_lines = call_code_content.splitlines()
+                
+                lines.append(f"**调用位置:** `{call_file_name}` (行 {call_start_line}-{call_end_line})")
+                lines.append("")
+                lines.append("```solidity")
+                
+                # 输出调用代码 (1-based line numbers)
+                for line_no in range(call_start_line, call_end_line + 1):
+                    if line_no > 0 and line_no <= len(call_code_lines):
+                        actual_line = call_code_lines[line_no - 1]
+                        lines.append(f"{line_no:4d} | {actual_line}")
+                
+                lines.append("```")
+                lines.append("")
+        
+        return "\n".join(lines)
+        
+    except Exception as e:
+        import traceback
+        traceback_str = traceback.format_exc()
+        return f"[⚠️] 生成 Vuln_function.md 失败: {e}\n\n{traceback_str}"
 
 def main():
     """主函数"""

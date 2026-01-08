@@ -30,6 +30,7 @@ class BlocksecAnalyzer:
         "fundflow": "/api/v1/onchain/tx/fundflow",
         "state_change": "/api/v1/onchain/tx/state-change",
         "trace": "/api/v1/onchain/tx/trace",
+        "debug_code": "/api/v1/onchain/tx/debug-code",
     }
     
     # 链ID到名称的映射
@@ -53,6 +54,7 @@ class BlocksecAnalyzer:
         self.network_helper = NetworkHelper(self.driver)
         self.api_responses = {}
         self._own_driver = driver is None  # 标记是否自己创建的 driver
+        self._headless = headless  # 保存 headless 参数，以便重新创建浏览器
     
     def analyze_transaction(
         self,
@@ -92,7 +94,7 @@ class BlocksecAnalyzer:
     
     def _fetch_api_responses(self, url: str) -> None:
         """捕获 API 响应"""
-        # 捕获所有 Blocksec API
+        # 捕获所有 Blocksec API（基础信息）
         responses = self.network_helper.capture_api_responses(
             url=url,
             url_pattern="/api/v1/onchain/tx/",
@@ -104,6 +106,38 @@ class BlocksecAnalyzer:
             responses=responses,
             path_mapping=self.API_PATHS,
         )
+        
+        print("[*] 关闭当前浏览器，准备重新打开新浏览器获取合约代码...")
+        
+        # 关闭当前浏览器
+        if self._own_driver and self.driver:
+            self.driver.quit()
+        
+        # 创建新的浏览器实例（绕过 Cloudflare）
+        self.driver = ChromeDriver(headless=self._headless)
+        self.network_helper = NetworkHelper(self.driver)
+        
+        # 访问带参数的页面以触发 debug-code API 获取合约代码
+        debug_url = f"{url}?debugLine=2&line=2"
+        print(f"[*] 使用新浏览器访问带参数的页面获取合约代码: {debug_url}")
+        
+        debug_responses = self.network_helper.capture_api_responses(
+            url=debug_url,
+            url_pattern="/api/v1/onchain/tx/debug-code",
+            wait_time=20,
+        )
+        
+        # 将 debug-code API 响应添加到 api_responses
+        if debug_responses:
+            print(f"[*] 捕获到 {len(debug_responses)} 个响应")
+            for api_url, response_data in debug_responses.items():
+                print(f"[*] 响应 URL: {api_url}")
+                if "debug-code" in api_url:
+                    self.api_responses["debug_code"] = response_data
+                    print("[✓] 成功获取 debug-code API 响应")
+                    break
+        else:
+            print("[⚠️] 未捕获到任何 debug-code API 响应")
     
     def _build_report(
         self,
@@ -330,15 +364,19 @@ class BlocksecAnalyzer:
         tx_dir = output_path / txn_hash
         tx_dir.mkdir(parents=True, exist_ok=True)
         
+        # 创建 Json 子目录
+        json_dir = tx_dir / "Json"
+        json_dir.mkdir(parents=True, exist_ok=True)
+        
         # 保存 Markdown 报告
         md_file = tx_dir / "report.md"
         with open(md_file, 'w', encoding='utf-8') as f:
             f.write(report.to_markdown())
         print(f"[✓] report.md")
 
-        # 为每个 API 单独保存响应数据
+        # 为每个 API 单独保存响应数据到 Json 目录
         for name, data in self.api_responses.items():
-            single_api_file = tx_dir / f"{name}.json"
+            single_api_file = json_dir / f"{name}.json"
             with open(single_api_file, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
 
@@ -346,6 +384,16 @@ class BlocksecAnalyzer:
             if name == "trace":
                 file_size = single_api_file.stat().st_size / (1024 * 1024)
                 print(f"[✓] trace.json ({file_size:.2f} MB)")
+        
+        # 从 debug_code API 响应中提取并保存合约代码
+        debug_code_data = self.api_responses.get("debug_code")
+        if debug_code_data and isinstance(debug_code_data, dict):
+            # 提取合约代码（API 返回格式：{"code": "...", ...}）
+            contract_code = debug_code_data.get("code", "")
+            if contract_code:
+                contract_file = tx_dir / "contract_code.sol"
+                contract_file.write_text(contract_code, encoding="utf-8")
+                print(f"[✓] contract_code.sol (从 debug-code API 提取)")
     
     def close(self) -> None:
         """关闭分析器（释放资源）"""
